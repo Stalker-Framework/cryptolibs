@@ -1,0 +1,10 @@
+[submodule "src/mbedtls"]
+	path = src/mbedtls
+	url = https://github.com/ARMmbed/mbedtls.git
+
+[submodule "src/openssl"]
+	path = src/openssl
+	url = https://github.com/openssl/openssl.git
+[submodule "src/hacl-star"]
+	path = src/hacl-star
+	url = https://github.com/project-everest/hacl-star.git
