@@ -7,6 +7,7 @@ build_all() {
 }
 
 build_openssl() {
+    pushd .
     dst=`pwd`/dist/openssl
     cd src/openssl
     ./config --prefix=$dst
@@ -14,9 +15,11 @@ build_openssl() {
     make
     echo "== Installing files to $dst"
     make install
+    popd
 }
 
 build_mbedtls() {
+    pushd .
     dst=`pwd`/dist/mbedtls
     cd src/mbedtls
     mkdir -p build && cd build
@@ -25,9 +28,11 @@ build_mbedtls() {
     make
     echo "== Installing files to $dst"
     make install
+    popd
 }
 
 build_hacl() {
+    pushd .
     dst=`pwd`/dist/hacl-star
     cd src/hacl-star/dist/gcc-compatible
     ../configure --disable-ocaml
@@ -37,6 +42,7 @@ build_hacl() {
     mkdir -p $dst/lib $dst/include
     cp ./*.h $dst/include
     cp ./*.so ./*.a $dst/lib
+    popd
 }
 
 build_all
