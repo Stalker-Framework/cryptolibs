@@ -1,7 +1,6 @@
 [submodule "src/mbedtls"]
 	path = src/mbedtls
 	url = https://github.com/ARMmbed/mbedtls.git
-
 [submodule "src/openssl"]
 	path = src/openssl
 	url = https://github.com/openssl/openssl.git
@@ -11,3 +10,9 @@
 [submodule "src/libressl"]
 	path = src/libressl
 	url = https://github.com/libressl-portable/portable.git
+[submodule "src/libgcrypt"]
+	path = src/libgcrypt
+	url = https://dev.gnupg.org/source/libgcrypt.git
+[submodule "src/libsodium"]
+	path = src/libsodium
+	url = https://github.com/jedisct1/libsodium.git
