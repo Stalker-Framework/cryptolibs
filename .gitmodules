@@ -8,3 +8,6 @@
 [submodule "src/hacl-star"]
 	path = src/hacl-star
 	url = https://github.com/project-everest/hacl-star.git
+[submodule "src/libressl"]
+	path = src/libressl
+	url = https://github.com/libressl-portable/portable.git
