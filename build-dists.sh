@@ -3,14 +3,14 @@
 jobs=16
 
 build_all() {
-    # build_mbedtls
-    # build_hacl
-    # build_common_make libgcrypt libgcrypt
-    # build_common_make libressl LibreSSL
-    # build_common_make openssl OpenSSL
-    # build_common_make libsodium LibSodium
+    build_mbedtls
+    build_hacl
+    build_common_make libgcrypt libgcrypt
+    build_common_make libressl LibreSSL
+    build_common_make openssl OpenSSL
+    build_common_make libsodium LibSodium
     build_common_make nettle Nettle
-    # build_cryptolib
+    build_cryptolib
 }
 
 build_common_make() {
@@ -64,6 +64,7 @@ build_cryptolib() {
     cd src/cryptolib
     echo "== Building cryptolib"
     make
+    make libcl.so.3.4.6
     make stestlib
     echo "== Installing files to $dst"
     make install PREFIX=$dst
