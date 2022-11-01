@@ -16,3 +16,6 @@
 [submodule "src/libsodium"]
 	path = src/libsodium
 	url = https://github.com/jedisct1/libsodium.git
+[submodule "src/nettle"]
+	path = src/nettle
+	url = https://github.com/gnutls/nettle.git

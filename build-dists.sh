@@ -9,7 +9,8 @@ build_all() {
     # build_common_make libressl LibreSSL
     # build_common_make openssl OpenSSL
     # build_common_make libsodium LibSodium
-    build_cryptolib
+    build_common_make nettle Nettle
+    # build_cryptolib
 }
 
 build_common_make() {
@@ -18,6 +19,9 @@ build_common_make() {
     cd src/$1
     if [ -f ./autogen.sh ]; then
         ./autogen.sh
+    fi
+    if [ -f ./.bootstrap ]; then
+        ./.bootstrap
     fi
     ./configure --prefix=$dst
     echo "== Building $2"
