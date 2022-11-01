@@ -3,12 +3,13 @@
 jobs=16
 
 build_all() {
-    build_mbedtls
-    build_hacl
-    build_common_make libgcrypt libgcrypt
-    build_common_make libressl LibreSSL
-    build_common_make openssl OpenSSL
-    build_common_make libsodium LibSodium
+    # build_mbedtls
+    # build_hacl
+    # build_common_make libgcrypt libgcrypt
+    # build_common_make libressl LibreSSL
+    # build_common_make openssl OpenSSL
+    # build_common_make libsodium LibSodium
+    build_cryptolib
 }
 
 build_common_make() {
@@ -50,6 +51,18 @@ build_hacl() {
     mkdir -p $dst/lib $dst/include
     cp ./*.h $dst/include
     cp ./*.so ./*.a $dst/lib
+    popd
+}
+
+build_cryptolib() {
+    pushd .
+    dst=`pwd`/dist/cryptolib
+    cd src/cryptolib
+    echo "== Building cryptolib"
+    make
+    make stestlib
+    echo "== Installing files to $dst"
+    make install PREFIX=$dst
     popd
 }
 
